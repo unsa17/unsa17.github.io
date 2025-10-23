@@ -1,10 +1,118 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Elmanuk Gorontalo!</title>
-  </head>
-  <body>
-    <h1>Ape Bende Ni Oi</h1>
-    <p>Kita mau Ngapain Yak?</p>
-  </body>
+<!doctype html> 
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Subject 17: Simulacrum</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stars"></div>
+
+  <div class="frame" role="main">
+
+    <aside class="card" aria-label="profile card">
+      <div class="avatar">
+        <div class="orb" aria-hidden="true">
+          <!-- simple SVG logo inside orb -->
+          <svg width="92" height="92" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="g" x1="0" x2="1">
+                <stop offset="0" stop-color="#31f7ff" stop-opacity="0.95"/>
+                <stop offset="1" stop-color="#ff2ddb" stop-opacity="0.95"/>
+              </linearGradient>
+            </defs>
+            <circle cx="50" cy="50" r="30" fill="url(#g)" opacity="0.22" />
+            <path d="M50 28 L64 72 L36 72 Z" fill="url(#g)" opacity="0.95"/>
+          </svg>
+        </div>
+
+        <div style="text-align:center">
+          <div class="name">Simulacrum</div>
+          <div class="handle">@unsa_l4crum</div>
+        </div>
+      </div>
+
+      <div style="height:12px"></div>
+      <div class="divider"></div>
+
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <div class="chip">Engineer</div>
+        <div class="chip">Creative Dev</div>
+        <div class="chip">UI / UX</div>
+        <div class="chip">Futurist</div>
+      </div>
+
+      <div style="height:12px"></div>
+      <div class="terminal" aria-hidden="false">
+        <div class="line"><span class="prompt">>_</span><span class="cmd">Initializing...</span></div>
+        <div class="line"><span class="prompt">>_</span><span class="cmd">SCAN: identity | status: online</span></div>
+      </div>
+
+      <div class="scanline" aria-hidden="true"></div>
+    </aside>
+
+    <section class="panel">
+      <div class="headline">
+        <div>
+          <div class="title">Full‑Stack Developer — Sci‑Fi Enthusiast</div>
+          <div class="subtitle">Building shiny interfaces & tiny future things</div>
+        </div>
+      </div>
+
+      <p class="bio">I design and develop interfaces with a focus on clarity, motion, and micro-interactions. I like neon gradients, subtle noise, and components that feel alive. Available for collaboration on UI, frontend engineering, and concept builds.</p>
+
+      <div class="info" aria-hidden="false">
+        <div class="chip">Location: Palembang, ID</div>
+        <div class="chip">Experience: 4+ years</div>
+        <div class="chip">Stack: HTML • CSS • JS</div>
+        <div class="chip">Interests: AR • UX • Futurism</div>
+      </div>
+
+      <div class="divider" style="margin-top:20px"></div>
+
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;">
+        <div class="actions">
+          <button class="btn primary" id="contactBtn">Contact</button>
+          <button class="btn" id="cvBtn">Download CV</button>
+        </div>
+        <div style="font-size:12px;color:#9fe9ff;opacity:0.9">Last updated: Oct 24, 2025</div>
+      </div>
+
+      <div id="toast" style="position:fixed;right:18px;bottom:18px;background:rgba(4,10,18,0.9);padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);display:none;z-index:50;font-size:13px;color:#bfefff">Message sent</div>
+
+    </section>
+
+  </div>
+
+  <script>
+    // simple interactions
+    document.getElementById('contactBtn').addEventListener('click', ()=>{
+      const t = document.getElementById('toast');
+      t.textContent = 'Contact modal not implemented — replace with your link.';
+      t.style.display = 'block';
+      setTimeout(()=> t.style.display='none',2600);
+    });
+
+    document.getElementById('cvBtn').addEventListener('click', ()=>{
+      // triggers a fake download (replace href with real file)
+      const a = document.createElement('a');
+      a.href = 'data:text/plain;base64,' + btoa('CV placeholder for Rifqi');
+      a.download = 'Rifqi_CV.txt';
+      a.click();
+    });
+
+    // subtle typing header effect (no external libs)
+    (function typeHeadline(){
+      const el = document.querySelector('.title');
+      const full = el.textContent.trim();
+      el.textContent = '';
+      let i=0;
+      const iv = setInterval(()=>{
+        el.textContent += full[i++]||'';
+        if(i>full.length) clearInterval(iv);
+      },20);
+    })();
+  </script>
+</body>
 </html>
