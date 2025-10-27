@@ -46,6 +46,7 @@
       <div style="height:12px"></div>
       <div class="terminal" aria-hidden="false">
         <div class="line"><span class="prompt">>_</span><span class="cmd">Initializing...</span></div>
+        <div class="line"><span class="prompt">>_</span><span class="cmd">Database Found!</span></div>
         <div class="line"><span class="prompt">>_</span><span class="cmd">SCAN: identity | status: online</span></div>
       </div>
 
@@ -55,18 +56,18 @@
     <section class="panel">
       <div class="headline">
         <div>
-          <div class="title">Full‑Stack Developer — Sci‑Fi Enthusiast</div>
-          <div class="subtitle">Building shiny interfaces & tiny future things</div>
+          <div class="title">Unethical Creature</div>
+          <div class="subtitle">Not Necessary</div>
         </div>
       </div>
 
-      <p class="bio">I design and develop interfaces with a focus on clarity, motion, and micro-interactions. I like neon gradients, subtle noise, and components that feel alive. Available for collaboration on UI, frontend engineering, and concept builds.</p>
+      <p class="bio">Hypothetical creature trying to conquer absolute things</p>
 
       <div class="info" aria-hidden="false">
-        <div class="chip">Location: Palembang, ID</div>
-        <div class="chip">Experience: 4+ years</div>
+        <div class="chip">Location: Padang, ID</div>
+        <div class="chip">Experience: 1+ years</div>
         <div class="chip">Stack: HTML • CSS • JS</div>
-        <div class="chip">Interests: AR • UX • Futurism</div>
+        <div class="chip">Interests: Coding • Hardware • Sci-Fi • Sleep </div>
       </div>
 
       <div class="divider" style="margin-top:20px"></div>
@@ -79,40 +80,12 @@
         <div style="font-size:12px;color:#9fe9ff;opacity:0.9">Last updated: Oct 24, 2025</div>
       </div>
 
-      <div id="toast" style="position:fixed;right:18px;bottom:18px;background:rgba(4,10,18,0.9);padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);display:none;z-index:50;font-size:13px;color:#bfefff">Message sent</div>
+      <div id="toast" style="position:fixed;right:18px;bottom:18px;background:rgba(252, 253, 255, 0.9);padding:12px;border-radius:12px;border:1px solid rgba(255, 255, 255, 0.03);display:none;z-index:50;font-size:13px;color:#bfefff">Message sent</div>
 
     </section>
 
   </div>
 
-  <script>
-    // simple interactions
-    document.getElementById('contactBtn').addEventListener('click', ()=>{
-      const t = document.getElementById('toast');
-      t.textContent = 'Contact modal not implemented — replace with your link.';
-      t.style.display = 'block';
-      setTimeout(()=> t.style.display='none',2600);
-    });
-
-    document.getElementById('cvBtn').addEventListener('click', ()=>{
-      // triggers a fake download (replace href with real file)
-      const a = document.createElement('a');
-      a.href = 'data:text/plain;base64,' + btoa('CV placeholder for Rifqi');
-      a.download = 'Rifqi_CV.txt';
-      a.click();
-    });
-
-    // subtle typing header effect (no external libs)
-    (function typeHeadline(){
-      const el = document.querySelector('.title');
-      const full = el.textContent.trim();
-      el.textContent = '';
-      let i=0;
-      const iv = setInterval(()=>{
-        el.textContent += full[i++]||'';
-        if(i>full.length) clearInterval(iv);
-      },20);
-    })();
-  </script>
+  <script src="/script.js"></script>
 </body>
 </html>
